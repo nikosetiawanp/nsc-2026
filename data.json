@@ -1,0 +1,100 @@
+{
+  "danone": {
+    "name": "Danone",
+    "image": "/danone.png",
+    "days": [
+      {
+        "date": "1 Agustus",
+        "schedules": [
+          { "time": "12.00–14.00", "event": "Talk Show" },
+          { "time": "14.00–15.00", "event": "Q&A Session" }
+        ]
+      },
+      {
+        "date": "2 Agustus",
+        "schedules": [
+          { "time": "10.00–12.00", "event": "Workshop" },
+          { "time": "13.00–14.00", "event": "Panel Discussion" }
+        ]
+      },
+      {
+        "date": "3 Agustus",
+        "schedules": [
+          { "time": "09.00–11.00", "event": "Networking" },
+          { "time": "11.00–12.00", "event": "Closing Ceremony" }
+        ]
+      },
+      {
+        "date": "4 Agustus",
+        "schedules": [
+          { "time": "10.00–11.00", "event": "Award Session" },
+          { "time": "11.00–12.00", "event": "Product Demo" }
+        ]
+      }
+    ]
+  },
+
+  "apple": {
+    "name": "Apple Indonesia",
+    "image": "/apple.png",
+    "days": [
+      {
+        "date": "2 Agustus",
+        "schedules": [
+          { "time": "09.00–10.00", "event": "Keynote" },
+          { "time": "10.00–12.00", "event": "Product Showcase" }
+        ]
+      },
+      {
+        "date": "3 Agustus",
+        "schedules": [{ "time": "13.00–14.00", "event": "Developer Workshop" }]
+      }
+    ]
+  },
+
+  "samsung": {
+    "name": "Samsung",
+    "image": "/samsung.png",
+    "days": [
+      {
+        "date": "1 September",
+        "schedules": [
+          { "time": "10.00–11.00", "event": "Opening Ceremony" },
+          { "time": "11.00–12.00", "event": "Innovation Talk" }
+        ]
+      }
+    ]
+  },
+
+  "unilever": {
+    "name": "Unilever",
+    "image": "/unilever.png",
+    "days": [
+      {
+        "date": "5 September",
+        "schedules": [
+          { "time": "08.00–09.00", "event": "Breakfast Networking" },
+          { "time": "09.00–10.30", "event": "Brand Presentation" }
+        ]
+      },
+      {
+        "date": "6 September",
+        "schedules": [{ "time": "10.00–12.00", "event": "Team Activity" }]
+      }
+    ]
+  },
+
+  "tokopedia": {
+    "name": "Tokopedia",
+    "image": "/tokopedia.png",
+    "days": [
+      {
+        "date": "10 Oktober",
+        "schedules": [
+          { "time": "13.00–15.00", "event": "Merchant Talk" },
+          { "time": "15.00–16.00", "event": "Networking" }
+        ]
+      }
+    ]
+  }
+}

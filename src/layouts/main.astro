@@ -1,16 +1,23 @@
 ---
-import '../styles/global.css';
-const { content } = Astro.props;
+import Sidebar from "@/components/Sidebar";
+import "../styles/global.css";
+import Topbar from "@/components/Topbar";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{content.title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Tigaraksa NSC 2026</title>
+  </head>
+  <body>
+    <div
+      class="lg:mt-0 lg:ml-25 h-screen snap-y snap-mandatory overflow-y-scroll"
+    >
+      <Topbar client:load />
+      <Sidebar client:load />
+      <slot />
+    </div>
+  </body>
 </html>

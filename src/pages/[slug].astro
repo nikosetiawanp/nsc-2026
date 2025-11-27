@@ -1,0 +1,30 @@
+---
+import Main from "@/layouts/main.astro";
+import data from "../../data.json";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import RundownSection from "@/components/RundownSection";
+import LocationSection from "@/components/LocationSection";
+import ContactSection from "@/components/ContactSection";
+import GallerySection from "@/components/GallerySection";
+import ClosingSection from "@/components/ClosingSection";
+
+export async function getStaticPaths() {
+  return Object.keys(data).map((slug) => ({
+    params: { slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const company = data[slug as keyof typeof data];
+---
+
+<Main client:load>
+  <HeroSection company={company} client:load />
+  <AboutSection client:load />
+  <RundownSection company={company} client:load />
+  <LocationSection client:load />
+  <GallerySection client:load />
+  <ContactSection client:load />
+  <ClosingSection client:load />
+</Main>
