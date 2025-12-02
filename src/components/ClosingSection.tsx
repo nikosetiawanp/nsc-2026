@@ -4,6 +4,46 @@ import SectionTitle from "./SectionTitle";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import type React from "react";
+
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.currentTarget);
+  const data = Object.fromEntries(formData.entries());
+
+  const payload = {
+    sheetId: "1rzpDAfs3edCEmxIsLQ1LprPm2emSZfoPAoP21n1o7HI",
+    range: "Sheet1!A1",
+    values: [[data.name, data.department, data.comment]],
+  };
+
+  try {
+    const res = await fetch(
+      "https://nsc-2026-worker.tigaraksansc2026.workers.dev",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      },
+    );
+
+    const text = await res.text(); // get response text
+
+    if (res.ok) {
+      console.log("Success response:", text);
+      alert("Data sent!");
+    } else {
+      console.error("Error response:", text);
+      alert("Failed to send. Check console for details.");
+    }
+  } catch (err) {
+    console.error("Fetch error:", err);
+    alert("Error sending data. Check console for details.");
+  }
+};
 
 export default function ClosingSection() {
   return (
@@ -64,7 +104,10 @@ export default function ClosingSection() {
         </motion.div>
 
         {/* Form – fixed overflow so SEND button shows on mobile */}
-        <form className="flex w-full max-w-md flex-col gap-12">
+        <form
+          onSubmit={handleSubmit}
+          className="flex w-full max-w-md flex-col gap-12"
+        >
           {/* NAME */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
