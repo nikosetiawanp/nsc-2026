@@ -2,6 +2,8 @@
 import Sidebar from "@/components/Sidebar";
 import "../styles/global.css";
 import Topbar from "@/components/Topbar";
+import BottomNavigation from "@/components/BottomNavigation";
+import BackgroundImage from "../assets/background-image.svg";
 ---
 
 <html lang="en">
@@ -13,10 +15,22 @@ import Topbar from "@/components/Topbar";
   </head>
   <body>
     <div
-      class="lg:mt-0 lg:ml-25 h-screen snap-y snap-mandatory overflow-y-scroll"
+      class="lg:mt-0 h-screen snap-y snap-mandatory overflow-y-scroll relative"
     >
-      <Topbar client:load />
-      <Sidebar client:load />
+      <!-- <Topbar client:load />
+      <Sidebar client:load /> -->
+
+      <img
+        src={BackgroundImage.src}
+        alt="background-image"
+        class="fixed h-screen w-full -z-50 opacity-10 object-cover"
+      />
+      <!-- <img
+        src={BackgroundImage.src}
+        alt="background-image"
+        class="fixed inset-0 h-auto lg:w-screen -z-50 pointer-events-none opacity-10"
+      /> -->
+      <BottomNavigation client:load />
       <slot />
     </div>
   </body>

@@ -12,7 +12,7 @@ export default function RundownSection({ company }: { company: Company }) {
   return (
     <Section
       id="rundown"
-      className="relative flex flex-col items-center justify-start px-6 pt-24 lg:items-start lg:pt-0 lg:pl-48"
+      className="relative flex flex-col items-center justify-start px-6 pt-24 lg:items-start lg:pt-0"
     >
       {/* --- Background --- */}
       <motion.div

@@ -13,7 +13,10 @@ export default function Section({
   return (
     <section
       id={id}
-      className={cn("h-screen w-full snap-center scroll-pt-24", className)}
+      className={cn(
+        "relative h-screen w-full snap-center scroll-pt-24",
+        className,
+      )}
     >
       {children}
     </section>

@@ -1,0 +1,66 @@
+import Section from "@/layouts/Section";
+import SectionLabel from "./SectionLabel";
+import SectionTitle from "./SectionTitle";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import EventLogo from "../assets/event-logo.svg";
+
+function EventSection() {
+  return (
+    <Section
+      id="about"
+      className="relative flex items-center justify-center gap-16 px-6 pt-6 pb-36"
+    >
+      {/* Container */}
+      <div className="flex w-full max-w-5xl flex-col items-center justify-between gap-4 lg:flex-row">
+        <img
+          src={EventLogo.src}
+          alt="event-logo"
+          className="w-24 lg:order-1 lg:w-64"
+        />
+
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          exit={{ opacity: 0 }}
+          viewport={{ amount: 0.4, once: false }}
+          transition={{ duration: 0.45 }}
+          className="w-full lg:max-w-[425px]"
+        >
+          <SectionLabel className="text-[#C6A34F]">NSC 2026</SectionLabel>
+
+          <motion.div
+            initial={{ y: 25, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            exit={{ opacity: 0 }}
+            viewport={{ amount: 0.4, once: false }}
+            transition={{ duration: 0.45, delay: 0.1 }}
+          >
+            <SectionTitle className="mb-8 text-[#C6A34F]">ABOUT</SectionTitle>
+          </motion.div>
+
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            exit={{ opacity: 0 }}
+            viewport={{ amount: 0.4, once: false }}
+            transition={{ duration: 0.45, delay: 0.2 }}
+            className="text-[#317247]"
+          >
+            Welcome to TRS’s National Sales Conference. Your partnership plays a
+            crucial role in our shared mission, and we deeply appreciate the
+            growth we’ve achieved together.
+            <br />
+            <br />
+            This is a pivotal moment to set ambitious targets, refine our
+            approach, and ensure our collaboration delivers exceptional results.
+            Let’s make the most of this opportunity to focus on growth,
+            innovation, and to pave a strategic path forward for 2025.
+          </motion.p>
+        </motion.div>
+      </div>
+    </Section>
+  );
+}
+
+export default EventSection;

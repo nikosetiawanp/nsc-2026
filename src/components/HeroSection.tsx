@@ -48,13 +48,13 @@ function HeroSection({ company }: { company: Company }) {
         exit={{ opacity: 0 }}
         viewport={{ amount: 0.5, once: false }}
         transition={{ duration: 0.35, delay: 0.15 }}
-        className="mb-12 w-30 brightness-0 invert"
+        className="mb-12 w-48 brightness-0 invert"
         src={company.image}
         alt={company.name}
       />
 
       {/* Text */}
-      <motion.span
+      {/* <motion.span
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -63,9 +63,9 @@ function HeroSection({ company }: { company: Company }) {
         className="text-2xl lg:text-4xl"
       >
         Welcome, <strong>{company.name}</strong>
-      </motion.span>
+      </motion.span> */}
 
-      <motion.span
+      {/* <motion.span
         initial={{ y: 25, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -74,9 +74,9 @@ function HeroSection({ company }: { company: Company }) {
         className="text-2xl lg:text-4xl"
       >
         You are Invited to
-      </motion.span>
+      </motion.span> */}
 
-      <motion.span
+      {/* <motion.span
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -85,7 +85,7 @@ function HeroSection({ company }: { company: Company }) {
         className="font-display text-5xl lg:text-9xl"
       >
         NSC 2026
-      </motion.span>
+      </motion.span> */}
 
       {/* Button */}
       <motion.div
@@ -105,7 +105,7 @@ function HeroSection({ company }: { company: Company }) {
               .scrollIntoView({ behavior: "auto" })
           }
         >
-          OPEN INVITATION
+          PLAY
         </Button>
       </motion.div>
     </Section>

@@ -15,6 +15,20 @@
   src: url("/fonts/roboto.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: Maiandra;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/maian.TTF") format("woff2");
+}
+
+@font-face {
+  font-family: Soccer Jersey;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/soccer-jersey.ttf") format("woff2");
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -54,8 +68,8 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --font-display: "Airstrike";
-  --font-sans: "Roboto";
+  --font-display: "Soccer Jersey";
+  --font-sans: "Maiandra";
 }
 
 :root {

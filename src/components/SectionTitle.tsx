@@ -9,7 +9,7 @@ export default function SectionTitle({
   className?: string;
 }) {
   return (
-    <h2 className={cn("font-sans text-5xl font-bold lg:text-6xl", className)}>
+    <h2 className={cn("font-display text-5xl lg:text-5xl", className)}>
       {children}
     </h2>
   );
