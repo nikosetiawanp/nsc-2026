@@ -3,7 +3,8 @@ import SectionLabel from "./SectionLabel";
 import SectionTitle from "./SectionTitle";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import GoalImage from "../assets/goal.png?url";
+
 import type React from "react";
 
 const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -48,39 +49,10 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 export default function ClosingSection() {
   return (
     <Section
-      id="closing"
-      className="relative flex flex-col items-center justify-start px-6 pt-24 lg:items-start lg:pt-0"
+      id="about"
+      className="relative flex items-center justify-center gap-16 px-6 pt-6 pb-36"
     >
-      {/* Background image + animated fade */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        viewport={{ amount: 0.4, once: false }}
-        transition={{ duration: 1 }}
-        className={cn(
-          "pointer-events-none absolute top-0 right-0 -z-50 h-full w-[50%]",
-          "max-lg:top-auto max-lg:bottom-0 max-lg:left-0 max-lg:h-[30%] max-lg:w-full",
-        )}
-      >
-        <img
-          src="https://images.unsplash.com/photo-1473075109809-7a17d327bdf6?q=80&w=1470&auto=format&fit=crop"
-          alt="pattern"
-          className={cn(
-            "h-full w-full object-cover saturate-0",
-            "max-lg:object-top",
-          )}
-        />
-        <div
-          className={cn(
-            "absolute inset-0",
-            "bg-gradient-to-r from-white/100 to-white/0",
-            "max-lg:bg-gradient-to-b max-lg:from-white/100 max-lg:to-white/0",
-          )}
-        />
-      </motion.div>
-
-      <div className="w-full max-w-5xl lg:mt-24">
+      <div className="w-fit lg:w-full lg:max-w-5xl">
         {/* Animated LABEL */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
@@ -99,6 +71,7 @@ export default function ClosingSection() {
           exit={{ opacity: 0 }}
           viewport={{ amount: 0.4, once: false }}
           transition={{ duration: 0.45, delay: 0.1 }}
+          className="flex justify-center lg:justify-start"
         >
           <SectionTitle className="mb-8 text-[#C6A34F]">CLOSING</SectionTitle>
         </motion.div>
@@ -114,11 +87,11 @@ export default function ClosingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ amount: 0.4, once: false }}
             transition={{ duration: 0.45, delay: 0.15 }}
-            className="flex flex-col"
+            className="flex w-full flex-col"
           >
             <label
               htmlFor="name"
-              className="text-2xl font-medium text-[#C6A34F] lg:text-4xl"
+              className="text-xl font-medium text-[#C6A34F] lg:text-xl"
             >
               NAME
             </label>
@@ -127,7 +100,7 @@ export default function ClosingSection() {
               name="name"
               type="text"
               placeholder="Enter your name"
-              className="border-b-2 border-b-[#C6A34F]/50 bg-transparent px-1 py-3 text-stone-500 transition-all placeholder:text-stone-500 focus:border-b-[#C6A34F] focus:outline-0"
+              className="rounded-lg border border-[#C29D43] bg-white px-2 py-4 focus:outline-0"
             />
           </motion.div>
 
@@ -141,7 +114,7 @@ export default function ClosingSection() {
           >
             <label
               htmlFor="department"
-              className="text-2xl font-medium text-[#C6A34F] lg:text-4xl"
+              className="text-xl font-medium text-[#C6A34F] lg:text-xl"
             >
               DEPARTMENT
             </label>
@@ -150,7 +123,7 @@ export default function ClosingSection() {
               name="department"
               type="text"
               placeholder="Enter your department"
-              className="border-b-2 border-b-[#C6A34F]/50 bg-transparent px-1 py-3 text-stone-500 transition-all placeholder:text-stone-500 focus:border-b-[#C6A34F] focus:outline-0"
+              className="rounded-lg border border-[#C29D43] bg-white px-2 py-4 focus:outline-0"
             />
           </motion.div>
 
@@ -164,7 +137,7 @@ export default function ClosingSection() {
           >
             <label
               htmlFor="comment"
-              className="text-2xl font-medium text-[#C6A34F] lg:text-4xl"
+              className="text-xl font-medium text-[#C6A34F] lg:text-xl"
             >
               COMMENT
             </label>
@@ -173,19 +146,20 @@ export default function ClosingSection() {
               name="comment"
               type="text"
               placeholder="Enter your comment"
-              className="border-b-2 border-b-[#C6A34F]/50 bg-transparent px-1 py-3 text-stone-500 transition-all placeholder:text-stone-500 focus:border-b-[#C6A34F] focus:outline-0"
+              className="rounded-lg border border-[#C29D43] bg-white px-2 py-4 focus:outline-0"
             />
           </motion.div>
 
           {/* SEND button */}
           <motion.div
-            initial={{ opacity: 0, y: 26 }}
+            initial={{ opacity: 0, y: 26, scale: 1 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ amount: 0.4, once: false }}
-            transition={{ duration: 0.45, delay: 0.3 }}
+            transition={{ duration: 0.45 }}
+            whileHover={{ scale: 1.1 }}
           >
             <Button
-              className="w-full bg-[#C6A34F] hover:bg-[#C6A34F] lg:w-fit"
+              className="font-display w-full bg-[#C6A34F] py-6 text-xl hover:cursor-pointer hover:bg-[#C6A34F]"
               size="lg"
             >
               SEND
@@ -193,6 +167,16 @@ export default function ClosingSection() {
           </motion.div>
         </form>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ amount: 0.4, once: false }}
+        transition={{ duration: 1 }}
+        className="absolute top-10 right-0 -z-40 h-[768px] w-auto -scale-x-100"
+      >
+        <img src={GoalImage} className="h-full" />
+      </motion.div>
     </Section>
   );
 }

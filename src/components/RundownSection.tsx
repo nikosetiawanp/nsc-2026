@@ -12,51 +12,32 @@ export default function RundownSection({ company }: { company: Company }) {
   return (
     <Section
       id="rundown"
-      className="relative flex flex-col items-center justify-start px-6 pt-24 lg:items-start lg:pt-0"
+      className="relative flex items-start justify-center gap-16 px-6 pt-16 pb-36"
     >
-      {/* --- Background --- */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        viewport={{ amount: 0.4, once: false }}
-        transition={{ duration: 1 }}
-        className={cn(
-          "pointer-events-none absolute top-0 right-0 -z-50 h-full w-[50%]",
-          "max-lg:top-auto max-lg:bottom-0 max-lg:left-0 max-lg:h-[40%] max-lg:w-full",
-        )}
-      >
-        <img
-          src="https://images.unsplash.com/photo-1587329310686-91414b8e3cb7?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="pattern"
-          className={cn(
-            "h-full w-full object-cover saturate-0",
-            "max-lg:object-top",
-          )}
-        />
-
-        <div
-          className={cn(
-            "absolute inset-0",
-            "bg-gradient-to-r from-white/100 to-white/0",
-            "max-lg:bg-gradient-to-b max-lg:from-white/100 max-lg:to-white/0",
-          )}
-        />
-      </motion.div>
-
       {/* --- Content Wrapper (animation anchor) --- */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
-        className="w-full max-w-5xl lg:mt-24"
+        className="w-full max-w-5xl flex-col items-center lg:items-start"
       >
-        <SectionLabel className="text-[#C6A34F]">NSC 2026</SectionLabel>
-        <SectionTitle className="mb-8 text-[#C6A34F]">RUNDOWN</SectionTitle>
-
+        <div className="flex w-full justify-center lg:justify-start">
+          <SectionLabel className="flex w-full justify-center" />
+        </div>
+        <motion.div
+          initial={{ y: 25, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          exit={{ opacity: 0 }}
+          viewport={{ amount: 0.4, once: false }}
+          transition={{ duration: 0.45, delay: 0.1 }}
+        >
+          <SectionTitle className="mb-8 flex justify-center text-[#C6A34F] lg:justify-start">
+            RUNDOWN
+          </SectionTitle>
+        </motion.div>
         <Tabs defaultValue="0" className="mt-8 min-h-10">
-          <TabsList className="flex min-h-10 w-full justify-start gap-4 overflow-x-auto rounded-none bg-transparent whitespace-nowrap lg:min-h-14 [&::-webkit-scrollbar]:hidden">
+          <TabsList className="flex min-h-10 w-full justify-center gap-4 overflow-x-auto rounded-none bg-transparent whitespace-nowrap lg:min-h-14 lg:justify-start [&::-webkit-scrollbar]:hidden">
             {company.days.map((day, index) => (
               <motion.div key={index} whileHover={{ scale: 1.1 }}>
                 <TabsTrigger
@@ -77,7 +58,7 @@ export default function RundownSection({ company }: { company: Company }) {
               <TabsContent
                 key={index}
                 value={`${index}`}
-                className="mt-12 flex flex-col gap-2"
+                className="mt-12 flex w-full flex-col gap-2"
               >
                 {day.schedules.map((schedule, idx) => (
                   <React.Fragment key={idx}>

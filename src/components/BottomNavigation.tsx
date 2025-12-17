@@ -25,7 +25,7 @@ export default function BottomNavigation() {
         alt="nav-background"
         className="absolute top-0 left-1/2 h-full w-full -translate-x-1/2 object-cover object-top"
       />
-      <div className="z-50 mt-8 flex items-center justify-start gap-8 overflow-x-scroll overflow-y-hidden px-8 py-6 lg:justify-center">
+      <div className="z-50 mt-8 flex items-center justify-start gap-8 overflow-x-scroll overflow-y-hidden px-8 py-6 lg:justify-center [&::-webkit-scrollbar]:hidden">
         {navLinks.map((link, index) => {
           return (
             <motion.button

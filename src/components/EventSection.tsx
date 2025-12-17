@@ -36,7 +36,9 @@ function EventSection() {
             viewport={{ amount: 0.4, once: false }}
             transition={{ duration: 0.45, delay: 0.1 }}
           >
-            <SectionTitle className="mb-8 text-[#C6A34F]">ABOUT</SectionTitle>
+            <SectionTitle className="mb-8 flex justify-center text-[#C6A34F] lg:justify-start">
+              EVENT
+            </SectionTitle>
           </motion.div>
 
           <motion.p
