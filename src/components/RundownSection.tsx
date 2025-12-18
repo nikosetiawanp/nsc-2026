@@ -14,7 +14,7 @@ export default function RundownSection({ company }: { company: Company }) {
       id="rundown"
       className="relative flex items-start justify-center gap-16 px-6 py-6 pb-36"
     >
-      {/* --- Content Wrapper (animation anchor) --- */}
+      {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export default function RundownSection({ company }: { company: Company }) {
           </SectionTitle>
         </motion.div>
         <Tabs defaultValue="0" className="mt-8 min-h-10">
-          <TabsList className="flex min-h-10 w-full justify-start gap-4 overflow-x-auto rounded-none bg-transparent whitespace-nowrap lg:min-h-14 lg:justify-start [&::-webkit-scrollbar]:hidden">
+          <TabsList className="flex min-h-10 w-full justify-start gap-4 overflow-x-auto rounded-none bg-transparent whitespace-nowrap md:justify-center lg:min-h-14 lg:justify-start [&::-webkit-scrollbar]:hidden">
             {company.days.map((day, index) => (
               <motion.div key={index} whileHover={{ scale: 1.1 }}>
                 <TabsTrigger

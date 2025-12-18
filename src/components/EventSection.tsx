@@ -9,16 +9,10 @@ function EventSection() {
   return (
     <Section
       id="about"
-      className="relative flex items-center justify-center gap-16 px-6 pt-6 pb-36"
+      className="relative flex items-start justify-center gap-16 px-6 pt-6 pb-36 lg:items-center"
     >
       {/* Container */}
       <div className="flex w-full max-w-5xl flex-col items-center justify-between gap-4 lg:flex-row">
-        <img
-          src={EventLogo.src}
-          alt="event-logo"
-          className="w-24 lg:order-1 lg:w-64"
-        />
-
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -27,6 +21,11 @@ function EventSection() {
           transition={{ duration: 0.45 }}
           className="flex w-full flex-col items-center lg:max-w-[425px] lg:items-start"
         >
+          <img
+            src={EventLogo.src}
+            alt="event-logo"
+            className="w-16 lg:order-1 lg:w-64"
+          />
           <SectionLabel className="text-[#C6A34F]" />
 
           <motion.div
@@ -47,7 +46,7 @@ function EventSection() {
             exit={{ opacity: 0 }}
             viewport={{ amount: 0.4, once: false }}
             transition={{ duration: 0.45, delay: 0.2 }}
-            className="text-center text-[#317247] lg:text-left"
+            className="text-center text-sm text-[#317247] lg:text-left lg:text-[16px]"
           >
             Welcome to TRS’s National Sales Conference. Your partnership plays a
             crucial role in our shared mission, and we deeply appreciate the

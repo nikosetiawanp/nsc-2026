@@ -50,7 +50,7 @@ export default function ClosingSection() {
   return (
     <Section
       id="about"
-      className="relative flex items-center justify-center gap-16 px-6 pt-6 pb-36"
+      className="relative flex items-start justify-center gap-16 px-6 pt-6 pb-36 lg:items-center"
     >
       <div className="w-fit lg:w-full lg:max-w-5xl">
         {/* Animated LABEL */}
@@ -175,7 +175,7 @@ export default function ClosingSection() {
         transition={{ duration: 1 }}
         className="absolute top-10 right-0 -z-40 h-[768px] w-auto -scale-x-100"
       >
-        <img src={GoalImage} className="h-full" />
+        <img src={GoalImage} className="h-full w-full" />
       </motion.div>
     </Section>
   );

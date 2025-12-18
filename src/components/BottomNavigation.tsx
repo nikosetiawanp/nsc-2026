@@ -19,7 +19,7 @@ export default function BottomNavigation() {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 z-50 flex h-36 w-screen items-center justify-center lg:h-50">
+    <nav className="fixed bottom-0 left-0 z-50 flex h-36 w-screen items-center justify-center lg:h-36">
       <img
         src={NavBackground}
         alt="nav-background"
