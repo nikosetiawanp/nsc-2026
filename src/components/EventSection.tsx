@@ -25,9 +25,9 @@ function EventSection() {
           exit={{ opacity: 0 }}
           viewport={{ amount: 0.4, once: false }}
           transition={{ duration: 0.45 }}
-          className="w-full lg:max-w-[425px]"
+          className="flex w-full flex-col items-center lg:max-w-[425px] lg:items-start"
         >
-          <SectionLabel className="text-[#C6A34F]">NSC 2026</SectionLabel>
+          <SectionLabel className="text-[#C6A34F]" />
 
           <motion.div
             initial={{ y: 25, opacity: 0 }}
@@ -47,7 +47,7 @@ function EventSection() {
             exit={{ opacity: 0 }}
             viewport={{ amount: 0.4, once: false }}
             transition={{ duration: 0.45, delay: 0.2 }}
-            className="text-[#317247]"
+            className="text-center text-[#317247] lg:text-left"
           >
             Welcome to TRS’s National Sales Conference. Your partnership plays a
             crucial role in our shared mission, and we deeply appreciate the

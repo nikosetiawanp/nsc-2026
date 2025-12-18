@@ -10,7 +10,7 @@ export default function LocationSection() {
   return (
     <Section
       id="about"
-      className="relative flex items-center justify-center gap-16 px-6 pt-6 pb-36"
+      className="relative flex flex-col items-center justify-start gap-16 px-6 pt-6 pb-36 lg:flex-row lg:justify-center"
     >
       {/* Left */}
       <div className="w-full max-w-5xl">
@@ -19,7 +19,7 @@ export default function LocationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex flex-col items-center lg:items-start"
+          className="itemsz-center flex flex-col lg:items-start"
         >
           <SectionLabel className="text-[#C6A34F]">NSC 2026</SectionLabel>
           <motion.div

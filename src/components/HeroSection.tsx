@@ -10,14 +10,14 @@ function HeroSection({ company }: { company: Company }) {
       id="hero"
       className="relative flex flex-col items-center justify-center gap-4 overflow-hidden text-white"
     >
-      <Particles
+      {/* <Particles
         className="absolute inset-0"
         quantity={250}
         ease={80}
         staticity={50}
         color="#C6A34F"
         size={2}
-      />
+      /> */}
 
       {/* Background Image */}
       <motion.img
@@ -32,14 +32,14 @@ function HeroSection({ company }: { company: Company }) {
       />
 
       {/* Green gradient overlay */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         viewport={{ amount: 0.5, once: false }}
         transition={{ duration: 0.6 }}
         className="absolute bottom-0 left-0 -z-40 h-1/2 w-full bg-gradient-to-t from-[#2B653D]/50 to-[#2B653D]/0"
-      />
+      /> */}
 
       {/* Logo */}
       <motion.img

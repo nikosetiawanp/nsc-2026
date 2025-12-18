@@ -12,7 +12,7 @@ export default function RundownSection({ company }: { company: Company }) {
   return (
     <Section
       id="rundown"
-      className="relative flex items-start justify-center gap-16 px-6 pt-16 pb-36"
+      className="relative flex items-start justify-center gap-16 px-6 py-6 pb-36"
     >
       {/* --- Content Wrapper (animation anchor) --- */}
       <motion.div
@@ -37,12 +37,12 @@ export default function RundownSection({ company }: { company: Company }) {
           </SectionTitle>
         </motion.div>
         <Tabs defaultValue="0" className="mt-8 min-h-10">
-          <TabsList className="flex min-h-10 w-full justify-center gap-4 overflow-x-auto rounded-none bg-transparent whitespace-nowrap lg:min-h-14 lg:justify-start [&::-webkit-scrollbar]:hidden">
+          <TabsList className="flex min-h-10 w-full justify-start gap-4 overflow-x-auto rounded-none bg-transparent whitespace-nowrap lg:min-h-14 lg:justify-start [&::-webkit-scrollbar]:hidden">
             {company.days.map((day, index) => (
               <motion.div key={index} whileHover={{ scale: 1.1 }}>
                 <TabsTrigger
                   className={cn(
-                    "h-fit w-fit rounded-full border-2 border-[#C6A34F] bg-white px-4 py-2 text-sm font-bold text-[#C6A34F] shadow-none lg:text-lg",
+                    "font-display h-fit w-fit rounded-full border-2 border-[#C6A34F] bg-white px-4 py-2 text-sm text-[#C6A34F] shadow-none lg:text-lg",
                     "data-[state=active]:bg-[#C6A34F] data-[state=active]:text-white",
                   )}
                   value={`${index}`}
