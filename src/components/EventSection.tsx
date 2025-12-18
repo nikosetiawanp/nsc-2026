@@ -21,10 +21,11 @@ function EventSection() {
           transition={{ duration: 0.45 }}
           className="flex w-full flex-col items-center lg:max-w-[425px] lg:items-start"
         >
+          {/* Image mobile */}
           <img
             src={EventLogo.src}
             alt="event-logo"
-            className="w-16 lg:order-1 lg:w-64"
+            className="w-16 lg:hidden"
           />
           <SectionLabel className="text-[#C6A34F]" />
 
@@ -59,6 +60,11 @@ function EventSection() {
             innovation, and to pave a strategic path forward for 2025.
           </motion.p>
         </motion.div>
+        <img
+          src={EventLogo.src}
+          alt="event-logo"
+          className="hidden w-64 lg:block"
+        />
       </div>
     </Section>
   );
