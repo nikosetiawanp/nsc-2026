@@ -3,7 +3,7 @@ import SectionLabel from "./SectionLabel";
 import SectionTitle from "./SectionTitle";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
-import GoalImage from "../assets/goal.png?url";
+import ClosingImage from "../assets/closing-image.webp?url";
 
 import type React from "react";
 
@@ -173,9 +173,12 @@ export default function ClosingSection() {
         whileInView={{ opacity: 1 }}
         viewport={{ amount: 0.4, once: false }}
         transition={{ duration: 1 }}
-        className="absolute right-0 -z-40 flex h-[768px] h-full w-auto -scale-x-100 items-center"
+        className="absolute right-0 -z-40 flex h-full w-auto flex-col justify-center"
       >
-        <img src={GoalImage} className="h-auto w-full lg:h-full lg:w-auto" />
+        <img
+          src={ClosingImage}
+          className="max-h-[768px] w-full lg:h-full lg:w-auto"
+        />
       </motion.div>
     </Section>
   );

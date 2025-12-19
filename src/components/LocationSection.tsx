@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import LocationImage from "../assets/location-image.webp?url";
 
 export default function LocationSection() {
   return (
@@ -58,7 +59,7 @@ export default function LocationSection() {
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
             className="flex flex-col items-center gap-2 lg:items-start"
           >
-            <span className="text-2xl font-bold text-[#C29D43] lg:text-4xl">
+            <span className="text-center text-2xl font-bold text-[#C29D43] lg:text-left lg:text-4xl">
               The Grand Platinum Hotel Jakarta
             </span>
 
@@ -85,7 +86,19 @@ export default function LocationSection() {
         </div>
       </div>
 
-      <div className="h-40 w-40 bg-green-500"></div>
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+        className="absolute bottom-24 left-1/2 -z-50 w-full max-w-3xl min-w-sm -translate-x-1/2 lg:right-0 lg:bottom-auto lg:left-auto lg:translate-x-0"
+      >
+        <img
+          src={LocationImage}
+          alt="location-image"
+          className="h-full w-full"
+        />
+      </motion.div>
     </Section>
   );
 }

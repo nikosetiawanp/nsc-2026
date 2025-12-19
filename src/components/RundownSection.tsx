@@ -7,6 +7,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Divider from "./Divider";
+import RundownImage from "../assets/rundown-image.webp?url";
 
 export default function RundownSection({ company }: { company: Company }) {
   return (
@@ -68,7 +69,7 @@ export default function RundownSection({ company }: { company: Company }) {
                       <span className="text-lg font-bold text-[#C6A34F] lg:text-3xl">
                         {schedule.time}
                       </span>
-                      <span className="text-stone-500">{schedule.event}</span>
+                      <span className="text-[#C6A34F]">{schedule.event}</span>
                     </div>
 
                     {idx <= day.schedules.length - 1 && <Divider />}
@@ -78,6 +79,20 @@ export default function RundownSection({ company }: { company: Company }) {
             ))}
           </div>
         </Tabs>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+        className="absolute -bottom-10 left-1/2 -z-50 w-full max-w-2xl -translate-x-1/2 lg:right-0 lg:bottom-auto lg:left-auto lg:translate-x-0"
+      >
+        <img
+          src={RundownImage}
+          alt="location-image"
+          className="h-full w-full"
+        />
       </motion.div>
     </Section>
   );

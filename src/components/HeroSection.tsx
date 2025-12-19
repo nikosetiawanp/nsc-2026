@@ -3,6 +3,8 @@ import type { Company } from "@/types/company";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 import { Particles } from "@/components/ui/shadcn-io/particles";
+import HeroImage from "../assets/hero-image.webp?url";
+// import HeroImage from "../assets/hero-image.jpeg?url";
 
 function HeroSection({ company }: { company: Company }) {
   return (
@@ -26,20 +28,10 @@ function HeroSection({ company }: { company: Company }) {
         exit={{ opacity: 0 }}
         viewport={{ amount: 0.5, once: false }}
         transition={{ duration: 0.6 }}
-        src="https://images.unsplash.com/photo-1447233053706-4d987282231b?q=80&w=1632&auto=format&fit=crop"
+        src={HeroImage}
         alt=""
-        className="absolute top-0 left-0 -z-50 h-full w-full object-cover brightness-25 saturate-0"
+        className="absolute top-0 left-0 -z-50 h-full w-full object-cover"
       />
-
-      {/* Green gradient overlay */}
-      {/* <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        viewport={{ amount: 0.5, once: false }}
-        transition={{ duration: 0.6 }}
-        className="absolute bottom-0 left-0 -z-40 h-1/2 w-full bg-gradient-to-t from-[#2B653D]/50 to-[#2B653D]/0"
-      /> */}
 
       {/* Logo */}
       <motion.img
@@ -48,7 +40,7 @@ function HeroSection({ company }: { company: Company }) {
         exit={{ opacity: 0 }}
         viewport={{ amount: 0.5, once: false }}
         transition={{ duration: 0.35, delay: 0.15 }}
-        className="mb-12 w-48 brightness-0 invert"
+        className="mb-12 w-48"
         src={company.image}
         alt={company.name}
       />

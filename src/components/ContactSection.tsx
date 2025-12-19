@@ -4,6 +4,7 @@ import SectionTitle from "./SectionTitle";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import ContactImage from "../assets/contact-image.webp?url";
 
 const contacts = [
   {
@@ -65,12 +66,12 @@ export default function ContactSection() {
             >
               <div className="h-48 w-48 rounded-sm bg-[#007343] lg:h-80 lg:w-48"></div>
               <div className="flex flex-col">
-                <span className="font-display text-2xl text-[#007343]">
+                <span className="font-display text-2xl text-[#C29D43]">
                   {contact.name}
                 </span>
-                <span className="text-[#007343]">PIC</span>
-                <span className="text-[#007343]">081 2345 67890</span>
-                <motion.button className="rounded-sm bg-[#007343] py-1 text-white">
+                <span className="text-[#C29D43]">PIC</span>
+                <span className="text-[#C29D43]">081 2345 67890</span>
+                <motion.button className="rounded-sm bg-[#C29D43] py-1 text-white">
                   Whatsapp
                 </motion.button>
               </div>
@@ -110,6 +111,20 @@ export default function ContactSection() {
           ))}
         </div> */}
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+        className="absolute -bottom-10 left-1/2 -z-50 w-full max-w-2xl -translate-x-1/2 lg:right-0 lg:bottom-auto lg:left-auto lg:translate-x-0"
+      >
+        <img
+          src={ContactImage}
+          alt="location-image"
+          className="h-full w-full"
+        />
+      </motion.div>
     </Section>
   );
 }
