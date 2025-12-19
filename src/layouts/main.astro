@@ -15,21 +15,15 @@ import BackgroundImage from "../assets/background-image.svg";
   </head>
   <body>
     <div
+      id="scroll-container"
       class="lg:mt-0 h-screen snap-y snap-mandatory overflow-y-scroll relative"
     >
-      <!-- <Topbar client:load />
-      <Sidebar client:load /> -->
-
       <img
         src={BackgroundImage.src}
         alt="background-image"
         class="fixed h-screen w-full -z-50 opacity-10 object-cover"
       />
-      <!-- <img
-        src={BackgroundImage.src}
-        alt="background-image"
-        class="fixed inset-0 h-auto lg:w-screen -z-50 pointer-events-none opacity-10"
-      /> -->
+
       <BottomNavigation client:load />
       <slot />
     </div>

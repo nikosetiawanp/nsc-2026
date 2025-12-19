@@ -7,6 +7,8 @@ import GalleryIcon from "../assets/4.svg";
 import ContactIcon from "../assets/5.svg";
 import ClosingIcon from "../assets/6.svg";
 import NavBackground from "../assets/nav-background.png?url";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 export default function BottomNavigation() {
   const navLinks = [
@@ -18,8 +20,31 @@ export default function BottomNavigation() {
     { name: "CLOSING", href: "#closing", icon: ClosingIcon },
   ];
 
+  const [hide, setHide] = useState(true);
+
+  useEffect(() => {
+    const hero = document.getElementById("hero");
+    const scrollEl = document.getElementById("scroll-container");
+    if (!hero || !scrollEl) return;
+
+    const onScroll = () => {
+      const rect = hero.getBoundingClientRect();
+      setHide(rect.bottom > 0 && rect.top < window.innerHeight);
+    };
+
+    scrollEl.addEventListener("scroll", onScroll);
+    onScroll();
+
+    return () => scrollEl.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className="fixed bottom-0 left-0 z-50 flex h-36 w-screen items-center justify-center lg:h-36">
+    <nav
+      className={cn(
+        "fixed bottom-0 left-0 z-50 flex h-36 w-screen items-center justify-center transition-all duration-500 lg:h-36",
+        hide ? "pointer-events-none opacity-0" : "opacity-100",
+      )}
+    >
       <img
         src={NavBackground}
         alt="nav-background"
