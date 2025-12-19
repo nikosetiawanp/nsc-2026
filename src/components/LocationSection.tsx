@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 export default function LocationSection() {
   return (
     <Section
-      id="about"
+      id="location"
       className="relative flex flex-col items-center justify-start gap-16 px-6 pt-6 pb-36 lg:flex-row lg:justify-center"
     >
       {/* Left */}

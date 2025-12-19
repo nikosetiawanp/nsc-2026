@@ -8,7 +8,7 @@ import EventLogo from "../assets/event-logo.svg";
 function EventSection() {
   return (
     <Section
-      id="about"
+      id="event"
       className="relative flex items-start justify-center gap-16 px-6 pt-6 pb-36 lg:items-center"
     >
       {/* Container */}

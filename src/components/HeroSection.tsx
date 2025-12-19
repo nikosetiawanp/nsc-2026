@@ -52,62 +52,6 @@ function HeroSection({ company }: { company: Company }) {
         src={company.image}
         alt={company.name}
       />
-
-      {/* Text */}
-      {/* <motion.span
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        exit={{ opacity: 0 }}
-        viewport={{ amount: 0.5, once: false }}
-        transition={{ duration: 0.3, delay: 0.25 }}
-        className="text-2xl lg:text-4xl"
-      >
-        Welcome, <strong>{company.name}</strong>
-      </motion.span> */}
-
-      {/* <motion.span
-        initial={{ y: 25, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        exit={{ opacity: 0 }}
-        viewport={{ amount: 0.5, once: false }}
-        transition={{ duration: 0.3, delay: 0.35 }}
-        className="text-2xl lg:text-4xl"
-      >
-        You are Invited to
-      </motion.span> */}
-
-      {/* <motion.span
-        initial={{ y: 30, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        exit={{ opacity: 0 }}
-        viewport={{ amount: 0.5, once: false }}
-        transition={{ duration: 0.3, delay: 0.45 }}
-        className="font-display text-5xl lg:text-9xl"
-      >
-        NSC 2026
-      </motion.span> */}
-
-      {/* Button */}
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        exit={{ opacity: 0 }}
-        viewport={{ amount: 0.5, once: false }}
-        transition={{ duration: 0.1 }}
-        whileHover={{ scale: 1.1 }}
-      >
-        <Button
-          size="lg"
-          className="mt-16 bg-[#C6A34F] hover:bg-[#C6A34F]"
-          onClick={() =>
-            document
-              .getElementById("about")!
-              .scrollIntoView({ behavior: "auto" })
-          }
-        >
-          PLAY
-        </Button>
-      </motion.div>
     </Section>
   );
 }

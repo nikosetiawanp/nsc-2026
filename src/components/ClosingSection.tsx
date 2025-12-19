@@ -49,7 +49,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 export default function ClosingSection() {
   return (
     <Section
-      id="about"
+      id="closing"
       className="relative flex items-start justify-center gap-16 px-6 pt-6 pb-36 lg:items-center"
     >
       <div className="w-fit lg:w-full lg:max-w-5xl">
@@ -79,7 +79,7 @@ export default function ClosingSection() {
         {/* Form – fixed overflow so SEND button shows on mobile */}
         <form
           onSubmit={handleSubmit}
-          className="flex w-full max-w-md flex-col gap-12"
+          className="flex w-full max-w-md flex-col gap-6 lg:gap-12"
         >
           {/* NAME */}
           <motion.div
@@ -173,9 +173,9 @@ export default function ClosingSection() {
         whileInView={{ opacity: 1 }}
         viewport={{ amount: 0.4, once: false }}
         transition={{ duration: 1 }}
-        className="absolute top-10 right-0 -z-40 h-[768px] w-auto -scale-x-100"
+        className="absolute right-0 -z-40 flex h-[768px] h-full w-auto -scale-x-100 items-center"
       >
-        <img src={GoalImage} className="h-full w-full" />
+        <img src={GoalImage} className="h-auto w-full lg:h-full lg:w-auto" />
       </motion.div>
     </Section>
   );

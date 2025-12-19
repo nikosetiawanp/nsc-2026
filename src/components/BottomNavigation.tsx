@@ -41,8 +41,7 @@ export default function BottomNavigation() {
   return (
     <nav
       className={cn(
-        "fixed bottom-0 left-0 z-50 flex h-36 w-screen items-center justify-center transition-all duration-500 lg:h-36",
-        hide ? "pointer-events-none opacity-0" : "opacity-100",
+        "fixed bottom-0 left-0 z-50 flex h-36 w-screen items-center justify-center lg:h-36",
       )}
     >
       <img
@@ -50,7 +49,31 @@ export default function BottomNavigation() {
         alt="nav-background"
         className="absolute top-0 left-1/2 h-full w-full -translate-x-1/2 object-cover object-top"
       />
-      <div className="z-50 mt-8 flex items-center justify-start gap-8 overflow-x-scroll overflow-y-hidden px-8 py-6 lg:justify-center [&::-webkit-scrollbar]:hidden">
+      <div
+        className={cn(
+          "absolute z-50 mt-2 flex h-full w-full items-center justify-center transition-all duration-500 lg:mt-8",
+          !hide ? "pointer-events-none opacity-0" : "opacity-100",
+        )}
+      >
+        <motion.button
+          initial={{ scale: 1 }}
+          transition={{ duration: 0.1 }}
+          whileHover={{ scale: 1.1 }}
+          className={cn(
+            "button font-display left-1/2 rounded-lg bg-[#C6A34F] object-top px-4 py-2 text-white hover:cursor-pointer hover:bg-[#C6A34F]",
+          )}
+        >
+          KICK OFF
+        </motion.button>
+      </div>
+
+      {/* Bottom nav */}
+      <div
+        className={cn(
+          "z-50 mt-8 flex items-center justify-start gap-8 overflow-x-scroll overflow-y-hidden px-8 py-6 transition-all duration-500 lg:justify-center [&::-webkit-scrollbar]:hidden",
+          hide ? "pointer-events-none opacity-0" : "opacity-100",
+        )}
+      >
         {navLinks.map((link, index) => {
           return (
             <motion.button
