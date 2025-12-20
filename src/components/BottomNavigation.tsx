@@ -41,7 +41,7 @@ export default function BottomNavigation() {
   return (
     <nav
       className={cn(
-        "fixed bottom-0 left-0 z-50 flex h-36 w-screen items-center justify-center lg:h-36",
+        "fixed bottom-0 left-0 z-50 flex h-24 w-screen items-center justify-center lg:h-36",
       )}
     >
       <img
@@ -70,7 +70,7 @@ export default function BottomNavigation() {
       {/* Bottom nav */}
       <div
         className={cn(
-          "z-50 mt-8 flex items-center justify-start gap-8 overflow-x-scroll overflow-y-hidden px-8 py-6 transition-all duration-500 lg:justify-center [&::-webkit-scrollbar]:hidden",
+          "z-50 mt-4 flex items-center justify-start gap-5 overflow-x-scroll overflow-y-hidden px-8 py-6 transition-all duration-500 lg:mt-8 lg:justify-center lg:gap-8 [&::-webkit-scrollbar]:hidden",
           hide ? "pointer-events-none opacity-0" : "opacity-100",
         )}
       >
@@ -83,12 +83,16 @@ export default function BottomNavigation() {
             >
               <a
                 href={link.href}
-                className="flex flex-col items-center justify-center gap-2"
+                className="flex flex-col items-center justify-center gap-0 lg:gap-2"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/80">
-                  <img src={link.icon.src} alt="icon" className="w-12" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/80 lg:h-16 lg:w-16">
+                  <img
+                    src={link.icon.src}
+                    alt="icon"
+                    className="w-10 lg:w-12"
+                  />
                 </div>
-                <span className="text-[#C6A34F]">{link.name}</span>
+                <span className="text-sm text-[#C6A34F]">{link.name}</span>
               </a>
             </motion.button>
           );

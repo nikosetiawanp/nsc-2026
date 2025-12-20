@@ -47,7 +47,7 @@ function EventSection() {
             exit={{ opacity: 0 }}
             viewport={{ amount: 0.4, once: false }}
             transition={{ duration: 0.45, delay: 0.2 }}
-            className="text-center text-sm text-[#317247] lg:text-left lg:text-[16px]"
+            className="text-center text-sm text-[#C6A34F] lg:text-left lg:text-[16px]"
           >
             Welcome to TRS’s National Sales Conference. Your partnership plays a
             crucial role in our shared mission, and we deeply appreciate the

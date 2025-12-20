@@ -4,6 +4,8 @@ import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import HeroImage from "../assets/hero-image.webp?url";
+import ShadowImage from "../assets/shadow.webp?url";
+
 // import HeroImage from "../assets/hero-image.jpeg?url";
 
 function HeroSection({ company }: { company: Company }) {
@@ -40,7 +42,7 @@ function HeroSection({ company }: { company: Company }) {
         exit={{ opacity: 0 }}
         viewport={{ amount: 0.5, once: false }}
         transition={{ duration: 0.35, delay: 0.15 }}
-        className="mb-12 w-48"
+        className="w-48"
         src={company.image}
         alt={company.name}
       />

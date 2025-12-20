@@ -91,7 +91,7 @@ export default function ClosingSection() {
           >
             <label
               htmlFor="name"
-              className="text-xl font-medium text-[#C6A34F] lg:text-xl"
+              className="text-sm font-medium text-[#C6A34F] lg:text-xl"
             >
               NAME
             </label>
@@ -100,7 +100,7 @@ export default function ClosingSection() {
               name="name"
               type="text"
               placeholder="Enter your name"
-              className="rounded-lg border border-[#C29D43] bg-white px-2 py-4 focus:outline-0"
+              className="rounded-lg border border-[#C29D43] bg-white px-2 py-3 focus:outline-0 lg:py-4"
             />
           </motion.div>
 
@@ -114,7 +114,7 @@ export default function ClosingSection() {
           >
             <label
               htmlFor="department"
-              className="text-xl font-medium text-[#C6A34F] lg:text-xl"
+              className="text-sm font-medium text-[#C6A34F] lg:text-xl"
             >
               DEPARTMENT
             </label>
@@ -123,7 +123,7 @@ export default function ClosingSection() {
               name="department"
               type="text"
               placeholder="Enter your department"
-              className="rounded-lg border border-[#C29D43] bg-white px-2 py-4 focus:outline-0"
+              className="rounded-lg border border-[#C29D43] bg-white px-2 py-3 focus:outline-0 lg:py-4"
             />
           </motion.div>
 
@@ -137,7 +137,7 @@ export default function ClosingSection() {
           >
             <label
               htmlFor="comment"
-              className="text-xl font-medium text-[#C6A34F] lg:text-xl"
+              className="text-sm font-medium text-[#C6A34F] lg:text-xl"
             >
               COMMENT
             </label>
@@ -146,7 +146,7 @@ export default function ClosingSection() {
               name="comment"
               type="text"
               placeholder="Enter your comment"
-              className="rounded-lg border border-[#C29D43] bg-white px-2 py-4 focus:outline-0"
+              className="rounded-lg border border-[#C29D43] bg-white px-2 py-3 focus:outline-0 lg:py-4"
             />
           </motion.div>
 
