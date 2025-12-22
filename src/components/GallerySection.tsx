@@ -68,7 +68,7 @@ export default function GallerySection() {
       </motion.div>
 
       {/* Images */}
-      <div className="grid max-w-[425px] grid-cols-3 gap-2 overflow-y-scroll [&::-webkit-scrollbar]:hidden">
+      <div className="grid max-h-[325px] max-w-[425px] grid-cols-3 gap-2 overflow-y-scroll lg:max-h-none [&::-webkit-scrollbar]:hidden">
         {columns.map((column, colIndex) => (
           <div key={colIndex} className="grid gap-2">
             {column.map((src, imgIndex) => (

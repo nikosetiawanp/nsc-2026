@@ -62,6 +62,10 @@ export default function BottomNavigation() {
           className={cn(
             "button font-display left-1/2 rounded-lg bg-[#C6A34F] object-top px-4 py-2 text-white hover:cursor-pointer hover:bg-[#C6A34F]",
           )}
+          onClick={() => {
+            const element = document.getElementById("event");
+            element?.scrollIntoView({ behavior: "smooth" });
+          }}
         >
           KICK OFF
         </motion.button>

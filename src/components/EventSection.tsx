@@ -12,14 +12,14 @@ function EventSection() {
       className="relative flex items-center justify-center gap-16 px-6 pt-6 pb-36 lg:items-center"
     >
       {/* Container */}
-      <div className="flex w-full max-w-5xl flex-col items-center justify-between gap-4 lg:flex-row">
+      <div className="flex w-full max-w-5xl flex-col items-center justify-between lg:flex-row lg:gap-4">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           exit={{ opacity: 0 }}
           viewport={{ amount: 0.4, once: false }}
           transition={{ duration: 0.45 }}
-          className="flex w-full flex-col items-center lg:max-w-[425px] lg:items-start"
+          className="flex w-full flex-col items-center gap-4 lg:max-w-[425px] lg:items-start lg:gap-0"
         >
           {/* Image mobile */}
           <img
@@ -27,7 +27,6 @@ function EventSection() {
             alt="event-logo"
             className="w-16 lg:hidden"
           />
-          <SectionLabel className="text-[#C6A34F]" />
 
           <motion.div
             initial={{ y: 25, opacity: 0 }}
@@ -36,6 +35,7 @@ function EventSection() {
             viewport={{ amount: 0.4, once: false }}
             transition={{ duration: 0.45, delay: 0.1 }}
           >
+            <SectionLabel className="text-[#C6A34F]" />
             <SectionTitle className="mb-8 flex justify-center text-[#C6A34F] lg:justify-start">
               EVENT
             </SectionTitle>

@@ -62,9 +62,9 @@ export default function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ amount: 0.3, once: false }}
               transition={{ duration: 0.45, delay: 0.15 }}
-              className="group flex items-center gap-4 lg:items-end"
+              className="group flex items-center gap-4 md:items-end"
             >
-              <div className="h-48 w-48 rounded-sm bg-[#007343] lg:h-80 lg:w-48"></div>
+              <div className="h-28 w-28 rounded-sm bg-[#007343] md:h-80 md:w-48"></div>
               <div className="flex flex-col">
                 <span className="font-display text-2xl text-[#C29D43]">
                   {contact.name}
