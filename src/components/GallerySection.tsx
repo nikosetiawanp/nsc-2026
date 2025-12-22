@@ -30,7 +30,7 @@ export default function GallerySection() {
   return (
     <Section
       id="gallery"
-      className="relative flex flex-col items-center justify-start gap-8 px-6 pt-6 pb-36 lg:flex-row lg:justify-center"
+      className="relative flex flex-col items-center justify-start gap-0 px-6 pt-6 pb-36 lg:flex-row lg:justify-center lg:gap-8"
     >
       {/* Content*/}
       <motion.div
@@ -68,18 +68,28 @@ export default function GallerySection() {
       </motion.div>
 
       {/* Images */}
-      <div className="grid max-h-[425px] max-w-[425px] grid-cols-3 gap-2">
+      <div className="grid max-w-[425px] grid-cols-3 gap-2 overflow-y-scroll [&::-webkit-scrollbar]:hidden">
         {columns.map((column, colIndex) => (
           <div key={colIndex} className="grid gap-2">
             {column.map((src, imgIndex) => (
-              <div className="overflow-hidden rounded-sm">
-                <img
-                  key={imgIndex}
-                  src={src}
-                  alt=""
-                  className="h-full w-auto object-cover"
-                />
-              </div>
+              <Dialog key={imgIndex}>
+                <DialogTrigger asChild>
+                  <div className="group cursor-pointer overflow-hidden rounded-sm">
+                    <img
+                      src={src}
+                      alt=""
+                      className="h-full w-auto object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    />
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="max-h-[90vh] max-w-[90vw] overflow-hidden p-0">
+                  <img
+                    src={src}
+                    alt=""
+                    className="h-auto w-full object-contain"
+                  />
+                </DialogContent>
+              </Dialog>
             ))}
           </div>
         ))}

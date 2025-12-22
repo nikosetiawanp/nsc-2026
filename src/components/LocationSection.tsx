@@ -11,7 +11,7 @@ export default function LocationSection() {
   return (
     <Section
       id="location"
-      className="relative flex flex-col items-center justify-start gap-16 px-6 pt-6 pb-36 lg:flex-row lg:justify-center"
+      className="relative flex flex-col items-center justify-start gap-16 px-6 pt-6 pb-36 xl:flex-row xl:justify-center"
     >
       {/* Left */}
       <div className="w-full max-w-5xl">
@@ -20,7 +20,7 @@ export default function LocationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="itemsz-center flex flex-col lg:items-start"
+          className="itemsz-center flex flex-col xl:items-start"
         >
           <SectionLabel className="text-[#C6A34F]">NSC 2026</SectionLabel>
           <motion.div
@@ -30,19 +30,19 @@ export default function LocationSection() {
             viewport={{ amount: 0.4, once: false }}
             transition={{ duration: 0.45, delay: 0.1 }}
           >
-            <SectionTitle className="mb-8 flex justify-center text-[#C6A34F] lg:justify-start">
+            <SectionTitle className="mb-8 flex justify-center text-[#C6A34F] xl:justify-start">
               LOCATION
             </SectionTitle>
           </motion.div>{" "}
         </motion.div>
 
-        <div className="flex flex-col items-center lg:items-start">
+        <div className="flex flex-col items-center xl:items-start">
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-            className="mb-4 flex h-fit max-h-40 w-full justify-center overflow-hidden rounded-lg border md:w-fit lg:max-h-64"
+            className="mb-4 flex h-fit max-h-40 w-full justify-center overflow-hidden rounded-lg border md:w-fit xl:max-h-64"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.7387213102606!2d106.8236296759134!3d-6.165733860427557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5ccfad31207%3A0xbe8fbd60a735cbd6!2sM%C3%B6venpick%20Hotel%20Jakarta%20City%20Centre!5e0!3m2!1sen!2sid!4v1763963947152!5m2!1sen!2sid"
@@ -57,13 +57,13 @@ export default function LocationSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-            className="flex flex-col items-center gap-2 lg:items-start"
+            className="flex flex-col items-center gap-2 xl:items-start"
           >
-            <span className="text-center text-2xl font-bold text-[#C29D43] lg:text-left lg:text-4xl">
+            <span className="text-center text-2xl font-bold text-[#C29D43] xl:text-left xl:text-4xl">
               The Grand Platinum Hotel Jakarta
             </span>
 
-            <p className="text-center text-[#C29D43] lg:text-left">
+            <p className="hidden text-center text-[#C29D43] lg:block xl:text-left">
               Jl. Kartini Raya No 57, RT.3/RW.2, Kelurahan Kartini, Kecamatan
               Sawah Besar, Jakarta Pusat, DKI Jakarta 10750
             </p>
@@ -72,7 +72,7 @@ export default function LocationSection() {
               href="https://maps.app.goo.gl/dtmD9ndyudNEqs6Y9"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex justify-center lg:justify-start"
+              className="flex justify-center xl:justify-start"
             >
               <Button
                 size="lg"
@@ -91,7 +91,7 @@ export default function LocationSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-        className="absolute bottom-24 left-1/2 -z-50 w-full max-w-3xl min-w-sm -translate-x-1/2 lg:right-0 lg:bottom-auto lg:left-auto lg:translate-x-0"
+        className="absolute bottom-24 left-1/2 -z-50 w-full max-w-3xl min-w-sm -translate-x-1/2 xl:right-0 xl:bottom-auto xl:left-auto xl:translate-x-0"
       >
         <img
           src={LocationImage}

@@ -42,7 +42,7 @@ function HeroSection({ company }: { company: Company }) {
         exit={{ opacity: 0 }}
         viewport={{ amount: 0.5, once: false }}
         transition={{ duration: 0.35, delay: 0.15 }}
-        className="w-48"
+        className="mb-48 w-48"
         src={company.image}
         alt={company.name}
       />

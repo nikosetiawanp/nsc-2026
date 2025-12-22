@@ -9,7 +9,7 @@ function EventSection() {
   return (
     <Section
       id="event"
-      className="relative flex items-start justify-center gap-16 px-6 pt-6 pb-36 lg:items-center"
+      className="relative flex items-center justify-center gap-16 px-6 pt-6 pb-36 lg:items-center"
     >
       {/* Container */}
       <div className="flex w-full max-w-5xl flex-col items-center justify-between gap-4 lg:flex-row">
