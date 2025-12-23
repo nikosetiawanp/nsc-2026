@@ -6,19 +6,44 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import CompanyLogo from "../assets/company-logo.svg";
 
+import img1 from "../assets/gallery/1.webp?url";
+import img2 from "../assets/gallery/2.webp?url";
+import img3 from "../assets/gallery/3.webp?url";
+import img4 from "../assets/gallery/4.webp?url";
+import img5 from "../assets/gallery/5.webp?url";
+import img6 from "../assets/gallery/6.webp?url";
+import img7 from "../assets/gallery/7.webp?url";
+import img8 from "../assets/gallery/8.webp?url";
+import img9 from "../assets/gallery/9.webp?url";
+import img10 from "../assets/gallery/10.webp?url";
+import img11 from "../assets/gallery/11.webp?url";
+import img12 from "../assets/gallery/12.webp?url";
+import img13 from "../assets/gallery/13.webp?url";
+import img14 from "../assets/gallery/14.webp?url";
+import img15 from "../assets/gallery/15.webp?url";
+import img16 from "../assets/gallery/16.webp?url";
+import img17 from "../assets/gallery/17.webp?url";
+import img18 from "../assets/gallery/18.webp?url";
+
 const images = [
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg",
-  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg",
-  // "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg",
-  // "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg",
-  // "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg",
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img13,
+  img14,
+  img15,
+  img16,
+  img17,
+  img18,
 ];
 
 const columns = [[], [], []];
@@ -68,29 +93,41 @@ export default function GallerySection() {
       </motion.div>
 
       {/* Images */}
-      <div className="grid max-h-[325px] max-w-[425px] grid-cols-3 gap-2 overflow-y-scroll lg:max-h-none [&::-webkit-scrollbar]:hidden">
+      <div className="grid max-h-[325px] max-w-[425px] grid-cols-3 gap-2 overflow-y-scroll lg:max-h-[425px] [&::-webkit-scrollbar]:hidden">
         {columns.map((column, colIndex) => (
-          <div key={colIndex} className="grid gap-2">
-            {column.map((src, imgIndex) => (
-              <Dialog key={imgIndex}>
-                <DialogTrigger asChild>
-                  <div className="group cursor-pointer overflow-hidden rounded-sm">
+          <div key={colIndex} className="flex flex-col gap-2">
+            {column.map((src, imgIndex) => {
+              // global index so pattern doesn't reset per column
+              const globalIndex = colIndex + imgIndex * 3;
+              const isSquare = globalIndex % 2 === 1; // odd → 1/1, even → 3/4
+
+              return (
+                <Dialog key={imgIndex}>
+                  <DialogTrigger asChild>
+                    <div
+                      className={cn(
+                        "group relative w-full cursor-pointer overflow-hidden rounded-sm",
+                        isSquare ? "aspect-square" : "aspect-[3/4]",
+                      )}
+                    >
+                      <img
+                        src={src}
+                        alt=""
+                        className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                      />
+                    </div>
+                  </DialogTrigger>
+
+                  <DialogContent className="max-h-[90vh] max-w-[90vw] overflow-hidden p-0">
                     <img
                       src={src}
                       alt=""
-                      className="h-full w-auto object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                      className="h-auto w-full object-contain"
                     />
-                  </div>
-                </DialogTrigger>
-                <DialogContent className="max-h-[90vh] max-w-[90vw] overflow-hidden p-0">
-                  <img
-                    src={src}
-                    alt=""
-                    className="h-auto w-full object-contain"
-                  />
-                </DialogContent>
-              </Dialog>
-            ))}
+                  </DialogContent>
+                </Dialog>
+              );
+            })}
           </div>
         ))}
       </div>

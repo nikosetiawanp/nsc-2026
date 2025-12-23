@@ -5,19 +5,21 @@ import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import ContactImage from "../assets/contact-image.webp?url";
+import CP1 from "../assets/cp-1.jpeg?url";
+import CP2 from "../assets/cp-2.jpeg?url";
 
 const contacts = [
   {
-    name: "Andi",
-    number: "+62 812-3456-7890",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop",
+    name: "Dian Susanti",
+    number: "081310013011",
+    numberLink: "6281310013011",
+    image: CP1,
   },
   {
-    name: "Siti",
-    number: "+62 813-9876-5432",
-    image:
-      "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=800&auto=format&fit=crop",
+    name: "Nurhadi",
+    number: "081235816919",
+    numberLink: "6281235816919",
+    image: CP2,
   },
 ];
 
@@ -64,52 +66,36 @@ export default function ContactSection() {
               transition={{ duration: 0.45, delay: 0.15 }}
               className="group flex items-center gap-4 md:items-end"
             >
-              <div className="h-28 w-28 rounded-sm bg-[#007343] md:h-80 md:w-48"></div>
+              <div className="h-28 w-28 overflow-hidden rounded-sm bg-[#007343] md:h-80 md:w-48">
+                <img
+                  src={contact.image}
+                  alt="contact-image"
+                  className="h-auto w-full object-cover md:h-full md:w-auto"
+                />
+              </div>
               <div className="flex flex-col">
                 <span className="font-display text-2xl text-[#C29D43]">
                   {contact.name}
                 </span>
                 <span className="text-[#C29D43]">PIC</span>
-                <span className="text-[#C29D43]">081 2345 67890</span>
-                <motion.button className="rounded-sm bg-[#C29D43] py-1 text-white">
+                <span className="text-[#C29D43]">{contact.number}</span>
+                <motion.button
+                  className="rounded-sm bg-[#C29D43] py-1 text-white hover:cursor-pointer"
+                  onClick={() => {
+                    window.open(
+                      "https://wa.me/" + contact.numberLink,
+                      "_blank",
+                    );
+                  }}
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   Whatsapp
                 </motion.button>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Scroll container */}
-        {/* <div className="scrollbar-none flex gap-3 overflow-x-scroll overflow-y-hidden pb-4 [&::-webkit-scrollbar]:hidden">
-          {contacts.map((contact, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ amount: 0.3, once: false }}
-              transition={{ duration: 0.45, delay: 0.15 }}
-              className="group relative flex h-[350px] min-w-[200px] flex-col overflow-hidden rounded-xl lg:h-[500px] lg:min-w-[325px]"
-            >
-              <img
-                src={contact.image}
-                alt={contact.name}
-                className="absolute inset-0 h-full w-full object-cover saturate-0 transition-all group-hover:saturate-100"
-              />
-
-              <div className="absolute bottom-0 left-0 flex w-full flex-col bg-gradient-to-t from-black/100 to-black/0 p-4">
-                <span className="text-2xl font-bold text-white">
-                  {contact.name}
-                </span>
-                <span className="text-stone-300">PIC</span>
-                <span className="text-white underline">{contact.number}</span>
-
-                <Button className="mt-8 w-fit bg-[#C6A34F] hover:bg-[#C6A34F]">
-                  WHATSAPP
-                </Button>
-              </div>
-            </motion.div>
-          ))}
-        </div> */}
       </div>
 
       <motion.div
