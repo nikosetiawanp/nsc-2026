@@ -4,6 +4,7 @@ import "../styles/global.css";
 import Topbar from "@/components/Topbar";
 import BottomNavigation from "@/components/BottomNavigation";
 import BackgroundImage from "../assets/background-image.svg";
+import Intro from "@/components/Intro.astro";
 ---
 
 <html lang="en">
@@ -13,10 +14,11 @@ import BackgroundImage from "../assets/background-image.svg";
     <link rel="icon" type="image/svg+xml" href="../assets/event-logo.svg" />
     <title>Tigaraksa NSC 2026</title>
   </head>
-  <body>
+  <body class="overflow-hidden">
+    <Intro />
     <div
       id="scroll-container"
-      class="lg:mt-0 h-screen snap-y snap-mandatory overflow-y-scroll relative"
+      class="lg:mt-0 h-screen snap-y snap-mandatory overflow-hidden relative"
     >
       <img
         src={BackgroundImage.src}

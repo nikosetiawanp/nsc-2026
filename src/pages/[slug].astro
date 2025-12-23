@@ -19,7 +19,7 @@ const { slug } = Astro.params;
 const company = data[slug as keyof typeof data];
 ---
 
-<Main client:load>
+<Main>
   <HeroSection company={company} client:load />
   <EventSection client:load />
   <RundownSection company={company} client:load />

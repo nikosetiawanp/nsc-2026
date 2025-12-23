@@ -9,8 +9,11 @@ import ClosingIcon from "../assets/6.svg";
 import NavBackground from "../assets/nav-background.png?url";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useRef } from "react";
 
 export default function BottomNavigation() {
+  const hasPlayedRef = useRef(false);
+
   const navLinks = [
     { name: "EVENT", href: "#event", icon: EventIcon },
     { name: "RUNDOWN", href: "#rundown", icon: RundownIcon },
@@ -63,9 +66,46 @@ export default function BottomNavigation() {
             "button font-display left-1/2 rounded-lg bg-[#C6A34F] object-top px-4 py-2 text-white hover:cursor-pointer hover:bg-[#C6A34F]",
           )}
           onClick={() => {
-            const element = document.getElementById("event");
-            element?.scrollIntoView({ behavior: "smooth" });
+            if (hasPlayedRef.current) {
+              document
+                .getElementById("event")
+                ?.scrollIntoView({ behavior: "auto" });
+              return;
+            }
+
+            hasPlayedRef.current = true;
+
+            const intro = document.getElementById("intro");
+            const video = document.getElementById(
+              "introVideo",
+            ) as HTMLVideoElement;
+
+            if (!intro || !video) return;
+
+            intro.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+
+            video.currentTime = 0;
+            video.muted = false;
+            video.play();
+
+            video.addEventListener(
+              "ended",
+              () => {
+                intro.classList.add("hidden");
+                document.body.style.overflow = "";
+                document
+                  .getElementById("event")
+                  ?.scrollIntoView({ behavior: "auto" });
+              },
+              { once: true },
+            );
           }}
+
+          // onClick={() => {
+          //   const element = document.getElementById("event");
+          //   element?.scrollIntoView({ behavior: "smooth" });
+          // }}
         >
           KICK OFF
         </motion.button>
