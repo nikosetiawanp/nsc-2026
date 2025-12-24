@@ -1,4 +1,4 @@
-<div id="intro" class="fixed inset-0 z-[9999] hidden bg-black">
+<!-- <div id="intro" class="fixed inset-0 z-[9999] hidden bg-black">
   <video
     id="introVideo"
     playsinline
@@ -11,4 +11,43 @@
 
 <script>
   document.body.style.overflow = "hidden";
+</script> -->
+<div id="intro" class="fixed inset-0 z-[9999] hidden bg-black">
+  <video
+    id="introVideo"
+    playsinline
+    preload="auto"
+    class="absolute inset-0 h-full w-full object-cover"
+  >
+    <source src="/intro.webm" type="video/webm" />
+  </video>
+
+  <button
+    id="skipBtn"
+    class="absolute top-4 right-4 z-[10000] bg-[#C6a34f] text-white font-display px-4 py-2 rounded-lg hover:cursor-pointer"
+  >
+    Skip Video
+  </button>
+</div>
+
+<script>
+  document.body.style.overflow = "hidden";
+
+  const intro = document.getElementById("intro");
+  const skipBtn = document.getElementById("skipBtn");
+  const video = document.getElementById("introVideo");
+
+  skipBtn.addEventListener("click", () => {
+    video.pause();
+    video.currentTime = 0; // reset playback
+    video.muted = true; // ensure no audio plays
+
+    intro.style.display = "none";
+    document.body.style.overflow = "";
+
+    const eventSection = document.getElementById("event");
+    if (eventSection) {
+      eventSection.scrollIntoView({ behavior: "auto" });
+    }
+  });
 </script>

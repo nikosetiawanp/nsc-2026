@@ -1,5 +1,25 @@
----
-import Main from "@/layouts/main.astro";
----
+<div id="intro" class="fixed inset-0 bg-black">
+  <video
+    id="introVideo"
+    autoplay
+    muted
+    playsinline
+    preload="auto"
+    class="absolute inset-0 h-screen object-cover left-0"
+  >
+    <source src="/intro.webm" type="video/webm" />
+  </video>
+</div>
 
-<Main />
+<script>
+  document.body.style.overflow = "hidden";
+</script>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+</style>
