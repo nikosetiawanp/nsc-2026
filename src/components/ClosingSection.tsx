@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Section from "@/layouts/Section";
 import SectionLabel from "./SectionLabel";
 import SectionTitle from "./SectionTitle";
@@ -6,47 +7,54 @@ import { motion } from "framer-motion";
 import ClosingImage from "../assets/closing-image.webp?url";
 
 import type React from "react";
-
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-
-  const formData = new FormData(e.currentTarget);
-  const data = Object.fromEntries(formData.entries());
-
-  const payload = {
-    sheetId: "1rzpDAfs3edCEmxIsLQ1LprPm2emSZfoPAoP21n1o7HI",
-    range: "Sheet1!A1",
-    values: [[data.name, data.department, data.comment]],
-  };
-
-  try {
-    const res = await fetch(
-      "https://nsc-2026-worker.tigaraksansc2026.workers.dev",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      },
-    );
-
-    const text = await res.text(); // get response text
-
-    if (res.ok) {
-      console.log("Success response:", text);
-      alert("Data sent!");
-    } else {
-      console.error("Error response:", text);
-      alert("Failed to send. Check console for details.");
-    }
-  } catch (err) {
-    console.error("Fetch error:", err);
-    alert("Error sending data. Check console for details.");
-  }
-};
+import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 export default function ClosingSection() {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    const payload = {
+      sheetId: "1rzpDAfs3edCEmxIsLQ1LprPm2emSZfoPAoP21n1o7HI",
+      range: "Sheet1!A1",
+      values: [[data.name, data.department, data.comment]],
+    };
+
+    try {
+      const res = await fetch(
+        "https://nsc-2026-worker.tigaraksansc2026.workers.dev",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        },
+      );
+
+      const text = await res.text();
+
+      if (res.ok) {
+        console.log("Success response:", text);
+        toast.success("Terima kasih! Pesan Anda telah dikirim.");
+      } else {
+        console.error("Error response:", text);
+        toast.error("Gagal mengirim pesan, silakan coba beberapa saat lagi");
+      }
+    } catch (err) {
+      console.error("Fetch error:", err);
+      toast.error("Gagal mengirim pesan, silakan coba beberapa saat lagi");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Section
       id="closing"
@@ -76,7 +84,6 @@ export default function ClosingSection() {
           <SectionTitle className="mb-8 text-[#C6A34F]">CLOSING</SectionTitle>
         </motion.div>
 
-        {/* Form – fixed overflow so SEND button shows on mobile */}
         <form
           onSubmit={handleSubmit}
           className="flex w-full max-w-md flex-col gap-6 lg:gap-12"
@@ -101,6 +108,7 @@ export default function ClosingSection() {
               type="text"
               placeholder="Enter your name"
               className="rounded-lg border border-[#C29D43] bg-white px-2 py-3 focus:outline-0 lg:py-4"
+              disabled={loading}
             />
           </motion.div>
 
@@ -124,6 +132,7 @@ export default function ClosingSection() {
               type="text"
               placeholder="Enter your department"
               className="rounded-lg border border-[#C29D43] bg-white px-2 py-3 focus:outline-0 lg:py-4"
+              disabled={loading}
             />
           </motion.div>
 
@@ -147,6 +156,7 @@ export default function ClosingSection() {
               type="text"
               placeholder="Enter your comment"
               className="rounded-lg border border-[#C29D43] bg-white px-2 py-3 focus:outline-0 lg:py-4"
+              disabled={loading}
             />
           </motion.div>
 
@@ -156,13 +166,19 @@ export default function ClosingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ amount: 0.4, once: false }}
             transition={{ duration: 0.45 }}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: loading ? 1 : 1.1 }}
+            whileTap={{ scale: 1 }}
           >
             <Button
-              className="font-display w-full bg-[#C6A34F] py-6 text-xl hover:cursor-pointer hover:bg-[#C6A34F]"
+              className={cn(
+                "font-display w-full bg-[#C6A34F] py-6 text-xl opacity-100 hover:cursor-pointer hover:bg-[#C6A34F] disabled:opacity-100",
+                loading && "bg-neutral-500",
+              )}
               size="lg"
+              disabled={loading}
+              onClick={() => handleSubmit}
             >
-              SEND
+              {loading ? "Sending..." : "SEND"}
             </Button>
           </motion.div>
         </form>

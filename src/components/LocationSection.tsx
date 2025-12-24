@@ -69,18 +69,19 @@ export default function LocationSection() {
             </p>
 
             <a
-              href="https://maps.app.goo.gl/dtmD9ndyudNEqs6Y9"
+              href="https://maps.app.goo.gl/ZwR8gLKPwMMN2XN47"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex justify-center xl:justify-start"
+              className="flex h-fit w-fit justify-center xl:justify-start"
             >
-              <Button
-                size="lg"
-                className="mt-4 w-fit bg-[#C6A34F] hover:bg-[#C6A34F]"
+              <motion.button
+                className="flex items-center rounded-sm bg-[#C29D43] px-4 py-2 text-white hover:cursor-pointer"
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <MapPin />
                 OPEN IN GOOGLE MAPS
-              </Button>
+              </motion.button>
             </a>
           </motion.div>
         </div>
